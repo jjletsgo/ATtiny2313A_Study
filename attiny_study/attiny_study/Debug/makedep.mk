@@ -10,3 +10,5 @@ max7219.c
 
 spi.c
 
+uart.c
+

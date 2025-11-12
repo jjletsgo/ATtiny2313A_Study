@@ -11,6 +11,7 @@
 #include <avr/io.h>
 #include "spi.h"
 #include "max7219.h"
+#include "uart.h"
 
 
 

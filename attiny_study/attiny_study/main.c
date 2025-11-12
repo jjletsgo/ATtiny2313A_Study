@@ -20,11 +20,10 @@
 
 int main(void)
 {
-	USART_Init(68);
-	init_max7219();
-	while(1) {
-		//if(USART_transmit_byte(digit[digit_counter++]));
-		max7219_send_cmd(data[digit_counter++],0X01);
-		digit_counter %=9; //digit_counter가 0~7을 순환하도록 모듈러 연산
+	USART_Async_Init(103);
+	while(1){
+		
+		USART_Transmit_Max_8bit_Data(5);
+		_delay_ms(1000);
 	}
 }
