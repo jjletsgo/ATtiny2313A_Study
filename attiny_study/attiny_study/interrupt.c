@@ -28,3 +28,12 @@ void init_INT0()
 ISR(INT0_vect) {
 	light_flag = 1;
 }
+
+uint8_t get_light_flag_atomic() {
+	uint8_t flag;
+	cli();
+	flag=light_flag;
+	sei();
+	return flag;
+	
+}

@@ -24,12 +24,12 @@ int main(void)
 	DDRB |= (1 << 2);
 	
 	while(1) {
-		
-		if(light_flag) {
+		cli();
+		if(get_light_flag_atomic()) {
 			PINB |= (1 << 2); //PB2를 toggle
 			
 			light_flag = 0; 
 		}
-
+		sei();
 	}
 }

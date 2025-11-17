@@ -16,4 +16,5 @@
 
 #endif /* INTERRUPT_H_ */
 
-extern volatile uint8_t light_flag;
+volatile uint8_t light_flag;
+uint8_t get_light_flag_atomic();
