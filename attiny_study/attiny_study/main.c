@@ -20,11 +20,16 @@
 
 int main(void)
 {
-	USART_Init(68);
-	init_max7219();
+	init_INT0();
+	DDRB |= (1 << 2);
+	
 	while(1) {
-		//if(USART_transmit_byte(digit[digit_counter++]));
-		max7219_send_cmd(data[digit_counter++],0X01);
-		digit_counter %=9; //digit_counter가 0~7을 순환하도록 모듈러 연산
+		
+		if(light_flag) {
+			PINB |= (1 << 2); //PB2를 toggle
+			
+			light_flag = 0; 
+		}
+
 	}
 }

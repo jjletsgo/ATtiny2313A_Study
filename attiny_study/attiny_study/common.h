@@ -9,8 +9,10 @@
 #ifndef COMMON_H_
 #define COMMON_H_
 #include <avr/io.h>
+#include <avr/interrupt.h>
 #include "spi.h"
 #include "max7219.h"
+#include "interrupt.h"
 
 
 
